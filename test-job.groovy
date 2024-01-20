@@ -5,6 +5,11 @@ pipeline {
         stage('Hello') {
             steps {
                 sh "terraform -version"
+
+                sh """
+                    terraform init
+                    terraform plan
+                """
             }
         }
     }
